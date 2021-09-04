@@ -1,23 +1,23 @@
 # Kubernetes-Cluster-Configuration
 # Kubernetes Cluster Master-and-Worker Node on Ubuntu-20.4 #
-*Describe Kubernetes Cluster Master and Worker Node,
-First off all we create a Two ec2 instances One for Master Node and One [1] Worker Node*
+* Describe Kubernetes Cluster Master and Worker Node, *
+* First off all we create a Two ec2 instances One for Master Node and One [1] Worker Node *
 
-*Update ec2 Machine*
+* Update ec2 Machine *
 
     apt-get update -y
 
-# Set Hostname your Host Machine #
+* Set Hostname your Host Machine *
 
-  sudo hostnamectl set-hostname kubernetes-master
+    sudo hostnamectl set-hostname kubernetes-master
 
 # Disable Swap Memory #
 
-  swapoff -a
+    swapoff -a
    
 # Check It's Disable or not #
    
-  free -m
+    free -m
    
 # Install Docker Engine on your Host Machine #  
 
