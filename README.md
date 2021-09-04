@@ -20,8 +20,8 @@
    
 # Install Docker Engine on your Host Machine #  
 
-  apt install docker -y
-  apt install docker.io -y
+    apt install docker -y
+    apt install docker.io -y
   
 # Added a jason file in Docker Directory #
 
@@ -31,26 +31,29 @@
 
 # Reload Deamon #
 
-  sudo systemctl daemon-reload
+    sudo systemctl daemon-reload
 
 # Start and Enable Docker Engine #
 
-  systemctl start docker && systemctl enable docker
+    systemctl start docker && systemctl enable docker
 
 # Check Status Docker Service #
 
-  systemctl status docker
+    systemctl status docker
 
 # Now Install Kubernetes
 
-  sudo apt install apt-transport-https curl
-  curl -s https://packages.cloud.google.com/apt/doc/apt-key.gpg | sudo apt-key add
-  sudo apt-add-repository "deb http://apt.kubernetes.io/ kubernetes-xenial main"
-  sudo apt install kubeadm kubelet kubectl kubernetes-cni
+    sudo apt install apt-transport-https curl
+    
+    curl -s https://packages.cloud.google.com/apt/doc/apt-key.gpg | sudo apt-key add
+    
+    sudo apt-add-repository "deb http://apt.kubernetes.io/ kubernetes-xenial main"
+    
+    sudo apt install kubeadm kubelet kubectl kubernetes-cni
 
 # Enable Kubelet
 
-  systemctl enable kubelet
+    systemctl enable kubelet
   
 # Note: This Step Follow All Two Machine, Master and WorkerNode1 #
 
@@ -58,19 +61,21 @@
 
 # Task to do in only Master node #
 
-  kubeadm init --pod-network-cidr=10.244.0.0/16
+    kubeadm init --pod-network-cidr=10.244.0.0/16
 
-  mkdir -p $HOME/.kube
-  sudo cp -i /etc/kubernetes/admin.conf $HOME/.kube/config
-  sudo chown $(id -u):$(id -g) $HOME/.kube/config
+    mkdir -p $HOME/.kube
+    
+    sudo cp -i /etc/kubernetes/admin.conf $HOME/.kube/config
+    
+    sudo chown $(id -u):$(id -g) $HOME/.kube/config
 
 # Deploy a pod network #
 
-  kubectl apply -f "https://cloud.weave.works/k8s/net?k8s-version=$(kubectl version | base64 | tr -d '\n')"
+    kubectl apply -f "https://cloud.weave.works/k8s/net?k8s-version=$(kubectl version | base64 | tr -d '\n')"
   
 # Check All pods #
 
-  kubectl get pods -A
+    kubectl get pods -A
   
  # Now Join Kubernetes cluster
 # Run these from the worker node only: Example
@@ -80,14 +85,14 @@ kubeadm join 192.168.2.121:6443 --token p8r1a2.msnjnqjh36ft443w \
 
 # Check Node Ready or Not Ready #
 
-  kubectl get node
+    kubectl get node
   
   
 
 
 # Deploy Nginx in kubernetes #
 
-  vi nginx-deployment.yml
+    vi nginx-deployment.yml
   
 # Copy and Paste yml file #
 
@@ -128,11 +133,11 @@ spec:
 
 # Now Deploy Nginx #
 
-  kubectl apply -f nginx-deployment.yml
+    kubectl apply -f nginx-deployment.yml
 
 # Again nginx service deploy on kubernetes #
 
-  vi service.yml
+    vi service.yml
 
 # Copy and Paste yml file #
 
@@ -159,11 +164,11 @@ spec:
 
 # Now Deploy Nginx service #
 
-  kubectl apply -f service.yml
+    kubectl apply -f service.yml
 
 # Show service port #
 
-  kubectl get services --all-namespaces
+    kubectl get services --all-namespaces
 
 
 
