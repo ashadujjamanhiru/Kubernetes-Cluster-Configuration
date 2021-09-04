@@ -92,7 +92,7 @@ kubeadm join 192.168.2.121:6443 --token p8r1a2.msnjnqjh36ft443w \
   
 # Copy and Paste yml file #
 
-apiVersion: apps/v1 #  for k8s versions before 1.9.0 use apps/v1beta2  and before 1.8.0 use extensions/v1beta1
+apiVersion: apps/v1 #for k8s versions before 1.9.0 use apps/v1beta2  and before 1.8.0 use extensions/v1beta1
 kind: Deployment
 metadata:
   name: frontend
@@ -118,11 +118,11 @@ spec:
         env:
         - name: GET_HOSTS_FROM
           value: dns
-          # If your cluster config does not include a dns service, then to
-          # instead access environment variables to find service host
-          # info, comment out the 'value: dns' line above, and uncomment the
-          # line below:
-          # value: env
+          #If your cluster config does not include a dns service, then to
+          #instead access environment variables to find service host
+          #info, comment out the 'value: dns' line above, and uncomment the
+          #line below:
+          #value: env
         ports:
         - containerPort: 80
 
@@ -146,11 +146,11 @@ metadata:
     app: guestbook
     tier: frontend
 spec:
-  # comment or delete the following line if you want to use a LoadBalancer
+  #comment or delete the following line if you want to use a LoadBalancer
   type: NodePort
-  # if your cluster supports it, uncomment the following to automatically create
-  # an external load-balanced IP for the frontend service.
-  # type: LoadBalancer
+  #if your cluster supports it, uncomment the following to automatically create
+  #an external load-balanced IP for the frontend service.
+  #type: LoadBalancer
   ports:
   - port: 80
   selector:
