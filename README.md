@@ -3,9 +3,9 @@
 *Describe Kubernetes Cluster Master and Worker Node,
 First off all we create a Two ec2 instances One for Master Node and One [1] Worker Node*
 
-# Update ec2 Machine #
+*Update ec2 Machine*
 
-  apt-get update -y
+    apt-get update -y
 
 # Set Hostname your Host Machine #
 
