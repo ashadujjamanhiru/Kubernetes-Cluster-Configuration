@@ -23,7 +23,7 @@
     apt install docker -y
     apt install docker.io -y
   
-# Added a jason file in Docker Directory #
+# Added a jason file in Docker Directory # vi /etc/docker/daemon.json
 
 {
 "exec-opts": ["native.cgroupdriver=systemd"]
@@ -173,10 +173,10 @@ spec:
 
 
 
+# Kubernetes kubeadm init fails due to dial tcp 127.0.0.1:10248: connect: connection refused
+# Solve url
 
-
-
-
+https://stackoverflow.com/questions/54728254/kubernetes-kubeadm-init-fails-due-to-dial-tcp-127-0-0-110248-connect-connecti?answertab=active#tab-top
 
 
 
