@@ -49,7 +49,7 @@
     
     sudo apt-add-repository "deb http://apt.kubernetes.io/ kubernetes-xenial main"
     
-    sudo apt install kubeadm kubelet kubectl kubernetes-cni
+    sudo apt install -y kubeadm kubelet kubectl kubernetes-cni
 
 # Enable Kubelet
 
@@ -177,6 +177,10 @@ spec:
 # Solve url
 
 https://stackoverflow.com/questions/54728254/kubernetes-kubeadm-init-fails-due-to-dial-tcp-127-0-0-110248-connect-connecti?answertab=active#tab-top
+
+***If RuN time Error: unknown service runtime.v1alpha2.RuntimeService
+Solve Link:
+https://kubernetes.io/docs/setup/production-environment/container-runtimes/
 
 
 
