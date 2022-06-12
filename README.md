@@ -182,5 +182,7 @@ https://stackoverflow.com/questions/54728254/kubernetes-kubeadm-init-fails-due-t
 Solve Link:
 https://kubernetes.io/docs/setup/production-environment/container-runtimes/
 
+https://stackoverflow.com/questions/53900779/pods-failed-to-start-after-switch-cni-plugin-from-flannel-to-calico-and-then-fla
+
 
 
